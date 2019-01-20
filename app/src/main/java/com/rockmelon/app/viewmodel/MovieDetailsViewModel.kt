@@ -15,6 +15,7 @@ class MovieDetailsViewModel(application: Application) : AndroidViewModel(applica
         movieItem = item
     }
 
+    fun getMoviesItem():MoviesItem? = movieItem
 
     class MovieDetailsViewModelFactory(private val mApplication: Application, private val item: MoviesItem?) :
         ViewModelProvider.Factory {

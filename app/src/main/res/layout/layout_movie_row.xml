@@ -41,8 +41,8 @@
                     android:layout_marginTop="@dimen/std_large_margin"
                     android:textColor="@color/colorBlack"
                     android:textSize="@dimen/text_size_header"
-                    android:text='@{item.title}'
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:text='@{item.title}'/>
 
             <TextView
                     android:id="@+id/tvMovieDetails"

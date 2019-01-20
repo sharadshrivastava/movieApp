@@ -10,7 +10,7 @@
     <dimen name="std_xlarge_margin">32dp</dimen>
     <dimen name="header_margin">40dp</dimen>
     <dimen name="text_size">16sp</dimen>
-    <dimen name="text_size_med">15sp</dimen>
+    <dimen name="text_size_small">14sp</dimen>
     <dimen name="text_size_large">18sp</dimen>
     <dimen name="text_size_header">20sp</dimen>
     <dimen name="text_size_movie_header">40sp</dimen>

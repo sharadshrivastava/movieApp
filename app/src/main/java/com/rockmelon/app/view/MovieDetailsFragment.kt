@@ -10,6 +10,7 @@ import android.view.ViewGroup
 import com.rockmelon.app.R
 import com.rockmelon.app.databinding.FragmentMovieDetailsBinding
 import com.rockmelon.app.service.model.MoviesItem
+import com.rockmelon.app.utils.Utils
 import com.rockmelon.app.utils.Utils.KEY_ITEM
 import com.rockmelon.app.viewmodel.MovieDetailsViewModel
 
@@ -18,12 +19,11 @@ class MovieDetailsFragment : BaseFragment(){
     private lateinit var vm: MovieDetailsViewModel
     private lateinit var binding: FragmentMovieDetailsBinding
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         var item = arguments?.getParcelable<MoviesItem>(KEY_ITEM)
-        ViewModelProviders.of(this, MovieDetailsViewModel.MovieDetailsViewModelFactory(
-            activity!!.application, item)).get(MovieDetailsViewModel::class.java!!)
+        vm = ViewModelProviders.of(this, MovieDetailsViewModel.MovieDetailsViewModelFactory(
+            activity!!.application, item)).get(MovieDetailsViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -32,16 +32,18 @@ class MovieDetailsFragment : BaseFragment(){
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-
+        binding.item = vm.getMoviesItem()
+        Utils.loadImage(binding.ivMoviePoster, vm.getMoviesItem()?.poster)
+        //binding.ratingBar.rating = vm.getMoviesItem()?.stars?.toFloat()!!
     }
 
     companion object {
+
         fun create(item: MoviesItem?):MovieDetailsFragment{
             var fragment =  MovieDetailsFragment()
             var bundle = Bundle()
             bundle.putParcelable(KEY_ITEM, item)
             fragment.arguments = bundle
-
             return fragment
         }
     }
