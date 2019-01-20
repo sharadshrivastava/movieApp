@@ -1,0 +1,50 @@
+{
+  "data": {
+    "movies": [{
+      "Title": "Argo",
+      "Year": "2012",
+      "Runtime": "120 min",
+      "Genre": "Drama",
+      "Director": "Ben Affleck",
+      "Writers": ["Chris Terrio"],
+      "Actors": ["Ben Affleck", "Bryan Cranston", "Alan Arkin", "John Goodman"],
+      "Plot": "Acting under the cover of a Hollywood producer scouting a location for a science fiction film, a CIA agent launches a dangerous operation to rescue six Americans in Tehran during the U.S. hostage crisis in Iran in 1979.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNzljNjY3MDYtYzc0Ni00YjU0LWIyNDUtNTE0ZDRiMGExMjZlXkEyXkFqcGdeQXVyMTMxODk2OTU@._V1_SX300.jpg",
+      "Stars": "4",
+      "Rating": "7.7",
+      "Votes": "523,689",
+      "Studio": "Warner Bros. Pictures",
+      "Copyright": "2012 Warner Bros. Pictures"
+    }, {
+      "Title": "Mary Poppins",
+      "Year": "1964",
+      "Runtime": "139 min",
+      "Genre": "Family",
+      "Director": "Robert Stevenson",
+      "Writers": ["Bill Walsh", "Don DaGradi"],
+      "Actors": ["Julie Andrews", "Dick Van Dyke", "David Tomlinson", "Glynis Johns"],
+      "Plot": "In turn of the century London, a magical nanny employs music and adventure to help two neglected children become closer to their father.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BNmJkODczNjItNDI5Yy00MGI1LTkyOWItZDNmNjM4ZGI1ZDVlL2ltYWdlL2ltYWdlXkEyXkFqcGdeQXVyMDI2NDg0NQ@@._V1_SX300.jpg",
+      "Stars": "3",
+      "Rating": "7.8",
+      "Votes": "134,318",
+      "Studio": "Walt Disney Productions",
+      "Copyright": "1964 Walt Disney Productions"
+    }, {
+      "Title": "Batman",
+      "Year": "1989",
+      "Runtime": "126 min",
+      "Genre": "Action",
+      "Director": "Tim Burton",
+      "Writers": ["Bob Kane", "Sam Hamm", "Sam Hamm", "Warren Skaaren"],
+      "Actors": ["Michael Keaton", "Jack Nicholson", "Kim Basinger", "Robert Wuhl"],
+      "Plot": "The Dark Knight of Gotham City begins his war on crime with his first major enemy being the clownishly homicidal Joker.",
+      "Poster": "https://m.media-amazon.com/images/M/MV5BMTYwNjAyODIyMF5BMl5BanBnXkFtZTYwNDMwMDk2._V1_SX300.jpg",
+      "Stars": "4",
+      "Rating": "8.9",
+      "Votes": "309,332",
+      "Studio": "Warner Bros. Pictures",
+      "Copyright": "1989 Warner Bros. Pictures"
+    }]
+  }
+}
