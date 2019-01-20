@@ -46,7 +46,7 @@ class MovieListFragment : BaseFragment(), OnMovieClickListener {
             adapter = MoviesAdapter(this, list)
             binding.isLoading = true
         }
-        setupListView(binding.rvMovieList, adapter)
+        vm.setupListView(binding.rvMovieList, adapter)
     }
 
     private fun observeMovieLiveData() {

@@ -15,15 +15,5 @@ abstract class BaseFragment : Fragment() {
         retainInstance = true
         setHasOptionsMenu(true)
     }
-
-    //Keeping it in base fragment so it will be available for all future lists in real project.
-    protected fun setupListView(listView: RecyclerView?, adapter: MoviesAdapter?) {
-        listView?.setHasFixedSize(true)
-        val mLayoutManager = LinearLayoutManager(context)
-        mLayoutManager.orientation= LinearLayoutManager.HORIZONTAL
-        listView?.layoutManager = mLayoutManager
-        listView?.adapter = adapter
-        listView?.addItemDecoration(HorizontalSpaceItemDecoration(Utils.pxFromDp(context, 24f).toInt()))
-    }
 }
 
