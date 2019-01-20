@@ -1,11 +1,9 @@
 package com.rockmelon.app.view.adapter
 
 import android.databinding.DataBindingUtil
-import android.os.Bundle
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
-import com.bumptech.glide.Glide
 
 import java.text.SimpleDateFormat
 import com.rockmelon.app.R
@@ -41,8 +39,7 @@ class MoviesAdapter(
 
         fun bindData(movieItem: MoviesItem?) {
             binding.item = movieItem
-            Glide.with(itemView).load(movieItem?.poster).into(binding.ivMoviePoster);
-
+            Utils.loadImage(binding.ivMoviePoster, movieItem?.poster)
             itemView.setOnClickListener { manageMovieClick(movieItem) }
         }
 

@@ -20,8 +20,8 @@ import com.rockmelon.app.viewmodel.MovieListViewModel
 
 class MovieListFragment : BaseFragment(), OnMovieClickListener {
 
-    private lateinit var binding: FragmentMovieListBinding
     private lateinit var vm: MovieListViewModel
+    private lateinit var binding: FragmentMovieListBinding
     private var adapter: MoviesAdapter? = null
 
 
@@ -38,7 +38,6 @@ class MovieListFragment : BaseFragment(), OnMovieClickListener {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         setupMoviesList(null)
-        (activity as MainActivity).supportActionBar?.title = getString(R.string.movies)
     }
 
     private fun setupMoviesList(list: MutableList<MoviesItem?>?) {

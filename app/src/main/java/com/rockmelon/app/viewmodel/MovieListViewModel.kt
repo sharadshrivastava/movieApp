@@ -30,9 +30,9 @@ class MovieListViewModel(application: Application) : AndroidViewModel(applicatio
 
     fun setupListView(listView: RecyclerView?, adapter: MoviesAdapter?) {
         listView?.setHasFixedSize(true)
-        val mLayoutManager = LinearLayoutManager(getApplication())
-        mLayoutManager.orientation= LinearLayoutManager.HORIZONTAL
-        listView?.layoutManager = mLayoutManager
+        val layoutManager = LinearLayoutManager(getApplication())
+        layoutManager.orientation= LinearLayoutManager.HORIZONTAL
+        listView?.layoutManager = layoutManager
         listView?.adapter = adapter
         var space = MovieApp.get().resources.getDimension(R.dimen.std_short_margin)
         listView?.addItemDecoration(HorizontalSpaceItemDecoration(Utils.pxFromDp(getApplication(), space).toInt()))
