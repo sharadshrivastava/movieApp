@@ -4,11 +4,13 @@ import android.databinding.DataBindingUtil
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import android.widget.Toast
 
 import com.rockmelon.app.R
 import com.rockmelon.app.databinding.LayoutMovieRowBinding
 import com.rockmelon.app.service.model.MoviesItem
 import com.rockmelon.app.utils.Utils
+import com.rockmelon.app.view.OnMovieClickListener
 
 
 class MoviesAdapter(
@@ -39,7 +41,7 @@ class MoviesAdapter(
         fun bindData(movieItem: MoviesItem?) {
             binding.item = movieItem
             Utils.loadImage(binding.ivMoviePoster, movieItem?.poster)
-            itemView.setOnClickListener { manageMovieClick(movieItem) }
+            binding.clMovieRow.setOnClickListener { manageMovieClick(movieItem) }
         }
 
         private fun manageMovieClick(movieItem: MoviesItem?) {

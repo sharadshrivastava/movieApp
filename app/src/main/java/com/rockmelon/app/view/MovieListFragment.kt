@@ -2,9 +2,11 @@ package com.rockmelon.app.view
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
+import android.content.Context
 import android.databinding.DataBindingUtil
 import android.os.Bundle
 import android.support.design.widget.Snackbar
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -13,17 +15,28 @@ import com.rockmelon.app.R
 import com.rockmelon.app.databinding.FragmentMovieListBinding
 import com.rockmelon.app.service.Resource
 import com.rockmelon.app.service.model.MoviesItem
-import com.rockmelon.app.view.adapter.OnMovieClickListener
 import com.rockmelon.app.view.adapter.MoviesAdapter
 import com.rockmelon.app.viewmodel.MovieListViewModel
+import java.lang.ClassCastException
 
 
 class MovieListFragment : BaseFragment(), OnMovieClickListener {
 
+    private val TAG = "MovieListFragment"
+
     private lateinit var vm: MovieListViewModel
     private lateinit var binding: FragmentMovieListBinding
+    private lateinit var movieClickListener: OnMovieClickListener
     private var adapter: MoviesAdapter? = null
 
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        try {
+            movieClickListener = context as MainActivity
+        }catch (e:ClassCastException){
+            Log.v(TAG, "OnMovieClickListener should be implemented")
+        }
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -66,7 +79,7 @@ class MovieListFragment : BaseFragment(), OnMovieClickListener {
     }
 
     override fun onMovieClick(moviesItem: MoviesItem?) {
-       // launchMap(bundle)
+        movieClickListener.onMovieClick(moviesItem)
     }
 
     companion object {

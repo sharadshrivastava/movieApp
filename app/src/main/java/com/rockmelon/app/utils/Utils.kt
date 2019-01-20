@@ -10,6 +10,8 @@ import java.util.concurrent.TimeUnit
 
 object Utils {
 
+    const val KEY_ITEM = "item"
+
     fun pxFromDp(context: Context?, dp: Float): Float {
         return dp * context?.resources?.displayMetrics?.density!!
     }
