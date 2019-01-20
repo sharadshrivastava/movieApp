@@ -5,7 +5,6 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 
-import java.text.SimpleDateFormat
 import com.rockmelon.app.R
 import com.rockmelon.app.databinding.LayoutMovieRowBinding
 import com.rockmelon.app.service.model.MoviesItem
@@ -45,12 +44,6 @@ class MoviesAdapter(
 
         private fun manageMovieClick(movieItem: MoviesItem?) {
             clickListener.onMovieClick(movieItem)
-        }
-
-        private fun getFormattedDate(dateStr: String?): String {
-            val date = Utils.getDate(dateStr)
-            val transactionDateFormat = "dd MMM yyyy"
-            return SimpleDateFormat(transactionDateFormat).format(date)
         }
     }
 
