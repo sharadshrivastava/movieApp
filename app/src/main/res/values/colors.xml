@@ -6,10 +6,9 @@
     <color name="colorGrayBg">#F6F6F6</color>
     <color name="colorTealBg">#649898</color>
     <color name="colorYellowBg">#FFCC00</color>
-    <color name="colorGrayText">#8A8A8A</color>
+    <color name="colorGrayText">#616161</color>
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorBlack">#000000</color>
-    <color name="lightGray">#D3D3D3</color>
-    <color name="dividerGray">#EEEEEE</color>
+    <color name="dividerGray">#E0E0E0</color>
 
 </resources>

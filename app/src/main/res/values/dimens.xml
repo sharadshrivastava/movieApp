@@ -9,10 +9,10 @@
     <dimen name="std_large_med_margin">28dp</dimen>
     <dimen name="std_xlarge_margin">32dp</dimen>
     <dimen name="header_margin">40dp</dimen>
-    <dimen name="text_size">16sp</dimen>
     <dimen name="text_size_small">14sp</dimen>
+    <dimen name="text_size">16sp</dimen>
     <dimen name="text_size_large">18sp</dimen>
-    <dimen name="text_size_header">20sp</dimen>
+    <dimen name="text_size_xlarge">20sp</dimen>
     <dimen name="text_size_movie_header">40sp</dimen>
     <dimen name="movie_card_radius">6dp</dimen>
     <dimen name="movie_card_elevation">4dp</dimen>

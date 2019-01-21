@@ -4,6 +4,8 @@ import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.ViewModel
 import android.arch.lifecycle.ViewModelProvider
+import android.view.ViewGroup
+import android.widget.LinearLayout
 import com.rockmelon.app.service.model.MoviesItem
 
 

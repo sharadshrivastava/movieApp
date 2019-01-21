@@ -5,4 +5,9 @@
     <string name="network_error">Network Error</string>
     <string name="days_ago">%1$d days ago</string>
     <string name="currency">$%1$s</string>
+    <string name="cast">Cast &amp; Crew</string>
+    <string name="producer">Producers</string>
+    <string name="director">Director</string>
+    <string name="screenWriter">Screenwriter</string>
+    <string name="info">Information</string>
 </resources>

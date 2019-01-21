@@ -9,97 +9,221 @@
                 type="com.rockmelon.app.service.model.MoviesItem"/>
     </data>
 
-
-    <android.support.constraint.ConstraintLayout
+    <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:paddingStart="@dimen/std_margin"
+            android:layout_height="wrap_content"
             android:background="@android:color/background_light">
-
-        <ImageView
-                android:id="@+id/ivBack"
-                android:layout_width="wrap_content"
+        <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="@dimen/header_margin"
-                android:src="@drawable/arrow"
-                app:layout_constraintTop_toTopOf="parent"/>
+                android:paddingStart="@dimen/std_margin">
 
-        <android.support.v7.widget.CardView
-                android:id="@+id/cvPosterContainer"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                app:cardCornerRadius="@dimen/movie_card_radius"
-                app:cardElevation="@dimen/movie_card_elevation"
-                android:layout_marginTop="@dimen/std_large_margin"
-                app:layout_constraintTop_toBottomOf="@id/ivBack">
             <ImageView
-                    android:id="@+id/ivMoviePoster"
-                    android:layout_width="140dp"
-                    android:layout_height="206dp"
-                    android:scaleType="fitXY"/>
-        </android.support.v7.widget.CardView>
+                    android:id="@+id/ivBack"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/header_margin"
+                    android:src="@drawable/arrow"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-        <TextView
-                android:id="@+id/tvMovieTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorBlack"
-                android:textSize="@dimen/text_size_header"
-                android:textStyle="bold"
-                android:text='@{item.title}'
-                app:layout_constrainedWidth="true"
-                android:layout_marginStart="@dimen/std_margin"
-                app:layout_constraintStart_toEndOf="@id/cvPosterContainer"
-                app:layout_constraintTop_toTopOf="@id/cvPosterContainer"/>
+            <android.support.v7.widget.CardView
+                    android:id="@+id/cvPosterContainer"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:cardCornerRadius="@dimen/movie_card_radius"
+                    app:cardElevation="@dimen/movie_card_elevation"
+                    android:layout_marginTop="@dimen/std_large_margin"
+                    app:layout_constraintTop_toBottomOf="@id/ivBack">
+                <ImageView
+                        android:id="@+id/ivMoviePoster"
+                        android:layout_width="140dp"
+                        android:layout_height="206dp"
+                        android:scaleType="fitXY"/>
+            </android.support.v7.widget.CardView>
 
-        <TextView
-                android:id="@+id/tvMovieDetails"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorGrayText"
-                android:text='@{item.genre +" - "+item.runtime+" - "+item.year}'
-                android:textSize="@dimen/text_size"
-                app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"
-                app:layout_constraintStart_toStartOf="@id/tvMovieTitle"/>
+            <TextView
+                    android:id="@+id/tvMovieTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{item.title}'
+                    style="@style/HeaderText"
+                    android:layout_marginStart="@dimen/std_margin"
+                    app:layout_constraintStart_toEndOf="@id/cvPosterContainer"
+                    app:layout_constraintTop_toTopOf="@id/cvPosterContainer"/>
 
-        <TextView
-                android:id="@+id/tvMovieRatings"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorGrayText"
-                android:text='@{item.rating +", "+item.votes+" Ratings"}'
-                android:textSize="@dimen/text_size_small"
-                android:layout_marginTop="@dimen/std_margin"
-                app:layout_constraintTop_toBottomOf="@id/tvMovieDetails"
-                app:layout_constraintStart_toStartOf="@id/tvMovieTitle"/>
+            <TextView
+                    android:id="@+id/tvMovieDetails"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/SubHeaderText"
+                    android:text='@{item.genre +" - "+item.runtime+" - "+item.year}'
+                    app:layout_constraintTop_toBottomOf="@id/tvMovieTitle"
+                    app:layout_constraintStart_toStartOf="@id/tvMovieTitle"/>
 
-        <RatingBar
-                android:id="@+id/ratingBar"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                style="?android:attr/ratingBarStyleSmall"
-                android:numStars="5"
-                android:rating="@{Float.valueOf(item.stars)}"
-                app:layout_constraintTop_toBottomOf="@id/tvMovieRatings"
-                app:layout_constraintStart_toStartOf="@id/tvMovieTitle"/>
+            <TextView
+                    android:id="@+id/tvMovieRatings"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="@style/DescriptionText"
+                    android:text='@{item.rating +", "+item.votes+" Ratings"}'
+                    android:layout_marginTop="@dimen/std_margin"
+                    app:layout_constraintTop_toBottomOf="@id/tvMovieDetails"
+                    app:layout_constraintStart_toStartOf="@id/tvMovieTitle"/>
 
-        <TextView
-                android:id="@+id/tvMoviePlot"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textColor="@color/colorGrayText"
-                android:text='@{item.plot}'
-                android:textSize="@dimen/text_size_small"
-                android:layout_marginTop="@dimen/std_margin"
-                app:layout_constraintTop_toBottomOf="@id/cvPosterContainer"/>
+            <RatingBar
+                    android:id="@+id/ratingBar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    style="?android:attr/ratingBarStyleSmall"
+                    android:numStars="5"
+                    android:rating="@{Float.valueOf(item.stars)}"
+                    app:layout_constraintTop_toBottomOf="@id/tvMovieRatings"
+                    app:layout_constraintStart_toStartOf="@id/tvMovieTitle"/>
 
-        <View
-                android:layout_width="match_parent"
-                android:layout_height="1dp"
-                android:background="@color/dividerGray"
-                android:layout_marginTop="@dimen/std_large_margin"
-                android:layout_marginEnd="@dimen/std_margin"
-                app:layout_constraintTop_toBottomOf="@id/tvMoviePlot"/>
+            <TextView
+                    android:id="@+id/tvMoviePlot"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/DescriptionText"
+                    android:text='@{item.plot}'
+                    android:layout_marginTop="@dimen/std_margin"
+                    app:layout_constraintTop_toBottomOf="@id/cvPosterContainer"/>
 
-    </android.support.constraint.ConstraintLayout>
+            <View
+                    android:id="@+id/castDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dividerGray"
+                    android:layout_marginTop="@dimen/std_large_margin"
+                    android:layout_marginEnd="@dimen/std_margin"
+                    app:layout_constraintTop_toBottomOf="@id/tvMoviePlot"/>
+
+            <LinearLayout
+                    android:id="@+id/llCastCrew"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/std_med_margin"
+                    app:layout_constraintTop_toBottomOf="@id/castDivider"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/std_margin"
+                        android:text="@string/cast"
+                        style="@style/HeaderText"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/llProducers"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="@dimen/std_large_margin"
+                    app:layout_constraintTop_toBottomOf="@id/llCastCrew"
+                    app:layout_constraintStart_toStartOf="parent">
+
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/std_margin"
+                        android:text="@string/producer"
+                        style="@style/HeaderText"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/llDirectors"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    app:layout_constraintTop_toTopOf="@id/llCastCrew"
+                    app:layout_constraintStart_toStartOf="@id/llWriters">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/std_margin"
+                        android:text="@string/director"
+                        style="@style/HeaderText"/>
+            </LinearLayout>
+
+            <LinearLayout
+                    android:id="@+id/llWriters"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="@dimen/std_large_margin"
+                    app:layout_constraintTop_toTopOf="@id/llProducers"
+                    app:layout_constraintEnd_toEndOf="parent">
+                <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/std_margin"
+                        android:text="@string/screenWriter"
+                        style="@style/HeaderText"/>
+            </LinearLayout>
+
+            <View
+                    android:id="@+id/infoDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/dividerGray"
+                    android:layout_marginTop="@dimen/std_large_margin"
+                    android:layout_marginEnd="@dimen/std_margin"
+                    app:layout_constraintTop_toBottomOf="@id/llWriters"/>
+
+            <TextView
+                    android:id="@+id/tvInformation"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/info"
+                    style="@style/HeaderText"
+                    android:layout_marginTop="@dimen/std_med_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/infoDivider"/>
+
+            <TextView
+                    android:id="@+id/tvStudio"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Studio: "+item.studio}'
+                    style="@style/SubHeaderText"
+                    android:layout_marginTop="@dimen/std_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvInformation"/>
+
+            <TextView
+                    android:id="@+id/tvGenre"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Genre: "+item.genre}'
+                    style="@style/SubHeaderText"
+                    android:layout_marginTop="@dimen/std_short_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvStudio"/>
+
+            <TextView
+                    android:id="@+id/tvReleased"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Released: "+item.year}'
+                    style="@style/SubHeaderText"
+                    android:layout_marginTop="@dimen/std_short_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvGenre"/>
+
+            <TextView
+                    android:id="@+id/tvCopyright"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text='@{"Copyright: "+item.copyright}'
+                    style="@style/SubHeaderText"
+                    android:layout_marginTop="@dimen/std_short_margin"
+                    android:paddingBottom="@dimen/header_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvReleased"/>
+
+
+        </android.support.constraint.ConstraintLayout>
+    </ScrollView>
 </layout>
