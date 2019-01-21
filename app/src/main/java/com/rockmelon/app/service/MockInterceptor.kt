@@ -4,6 +4,7 @@ import com.rockmelon.app.MovieApp
 import com.rockmelon.app.service.MovieApi.Companion.MOVIE_PATH
 import okhttp3.*
 
+// This class is just to support offline JSON with Retrofit. In real app this class won't be required.
 class MockInterceptor:Interceptor {
 
     override fun intercept(chain: Interceptor.Chain): Response {

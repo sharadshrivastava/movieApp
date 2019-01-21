@@ -5,6 +5,7 @@ import android.arch.lifecycle.LiveData
 import android.arch.lifecycle.MutableLiveData
 import android.util.Log
 import com.rockmelon.app.MovieApp
+import com.rockmelon.app.R
 import com.rockmelon.app.service.model.ApiResponse
 import com.rockmelon.app.service.model.MoviesItem
 
@@ -41,7 +42,7 @@ class MovieRepository @Inject constructor() {
             }
             override fun onFailure(call: Call<ApiResponse>, t: Throwable) {
                 Log.e(TAG, t.stackTrace.toString())
-                handleFailure(data, "Network Error")
+                handleFailure(data, MovieApp.get().getString(R.string.network_error))
             }
         })
         return data

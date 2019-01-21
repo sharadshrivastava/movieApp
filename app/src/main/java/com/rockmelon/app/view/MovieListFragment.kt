@@ -22,7 +22,7 @@ import java.lang.ClassCastException
 
 class MovieListFragment : BaseFragment(), OnMovieClickListener {
 
-    private val TAG = "MovieListFragment"
+    private val TAG = MovieListFragment::class.java.simpleName
 
     private lateinit var vm: MovieListViewModel
     private lateinit var binding: FragmentMovieListBinding

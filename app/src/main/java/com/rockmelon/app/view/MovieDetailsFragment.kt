@@ -74,7 +74,6 @@ class MovieDetailsFragment : BaseFragment(){
         viewGroup.addView(castView)
     }
 
-
     companion object {
 
         fun create(item: MoviesItem?):MovieDetailsFragment{

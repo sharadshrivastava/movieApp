@@ -9,7 +9,7 @@ import android.util.Log
 
 abstract class BaseActivity : AppCompatActivity() {
 
-    private val tag = "BaseActivity"
+    private val tag = BaseActivity::class.java.simpleName
     private val allPermission = 1;
 
     override fun onCreate(savedInstanceState: Bundle?) {
