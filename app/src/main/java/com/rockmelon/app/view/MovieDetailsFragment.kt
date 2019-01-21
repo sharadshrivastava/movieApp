@@ -37,6 +37,8 @@ class MovieDetailsFragment : BaseFragment(){
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         binding.item = vm.getMoviesItem()
         Utils.loadImage(binding.ivMoviePoster, vm.getMoviesItem()?.poster)
+        binding.ivBack.setOnClickListener { activity?.supportFragmentManager?.popBackStack() }
+
         addCast()
         addProducers()
         addDirector()

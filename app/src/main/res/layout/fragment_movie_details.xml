@@ -87,6 +87,7 @@
                     style="@style/DescriptionText"
                     android:text='@{item.plot}'
                     android:layout_marginTop="@dimen/std_margin"
+                    android:layout_marginEnd="@dimen/std_margin"
                     app:layout_constraintTop_toBottomOf="@id/cvPosterContainer"/>
 
             <View
@@ -222,7 +223,6 @@
                     android:paddingBottom="@dimen/header_margin"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toBottomOf="@id/tvReleased"/>
-
 
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
