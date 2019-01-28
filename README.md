@@ -1,2 +1,2 @@
-# rockmelon
-Code for RockMelon
+# movieApp
+Code for MobieApp
