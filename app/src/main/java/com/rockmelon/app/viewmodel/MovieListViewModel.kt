@@ -28,14 +28,4 @@ class MovieListViewModel(application: Application) : AndroidViewModel(applicatio
 
     fun getMovies(): LiveData<Resource<List<MoviesItem?>>> = movieRepository.getMovies()
 
-    fun setupListView(listView: RecyclerView?, adapter: MoviesAdapter?) {
-        listView?.setHasFixedSize(true)
-        val layoutManager = LinearLayoutManager(getApplication())
-        layoutManager.orientation= LinearLayoutManager.HORIZONTAL
-        listView?.layoutManager = layoutManager
-        listView?.adapter = adapter
-        var space = MovieApp.get().resources.getDimension(R.dimen.std_short_margin)
-        listView?.addItemDecoration(HorizontalSpaceItemDecoration(Utils.pxFromDp(getApplication(), space).toInt()))
-    }
-
 }
